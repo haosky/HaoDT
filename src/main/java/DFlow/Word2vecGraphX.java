@@ -107,16 +107,13 @@ public class Word2vecGraphX {
         JavaRDD<Tuple2<Object, String>> myVertices = sc.parallelize(verclist);
         JavaRDD<Edge<Double>> myEdges = sc.parallelize(edlist);
 
-        System.out.println("Line 124");
         Graph<String,Double> myGraph = Graph.apply(myVertices.rdd(),
                 myEdges.rdd(), "", StorageLevel.MEMORY_ONLY(),
                 StorageLevel.MEMORY_ONLY(), tagString, tagDouble);
 
-        System.out.println("Line 128");
         Graph<Long,Double> initialGraph = myGraph.mapVertices(
                 new SerializableFunction2<Object,String,Long>() {
                     public Long apply(Object o, String s) {
-                        System.out.println("Line 133");
                         return 0L; }
                 },
                 tagLong, null);
@@ -126,7 +123,7 @@ public class Word2vecGraphX {
 //        initialGraph.vertices().saveAsTextFile("mayGrapthVertices");
         List<Tuple2<Object,Long>> ls = toJavaPairRDD(
                 propagateEdgeCount(initialGraph).vertices(), tagLong).collect();
-        System.out.println("Line 143");
+
         for (Tuple2<Object,Long> t : ls)
             System.out.print(t);
         System.out.println();
@@ -158,7 +155,6 @@ public class Word2vecGraphX {
             new SerializableFunction1<
                     EdgeContext<Long, Double, Long>, BoxedUnit>() {
                 public BoxedUnit apply(EdgeContext<Long, Double, Long> ec) {
-                    System.out.println("Line 172");
                     ec.sendToDst(ec.srcAttr()+1L);
                     return BoxedUnit.UNIT;
                 }
