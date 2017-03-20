@@ -1,4 +1,4 @@
-# Big data == hadoop 、 spark usage and others
+# Big data == hadoop 、 spark usage and others....
 # learning for Big Data  >_<
 ```
 For more information, please contact
