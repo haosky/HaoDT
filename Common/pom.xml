@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.apache</groupId>
+   		<artifactId>HaoDT</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>Common</artifactId>
+    <packaging>jar</packaging>
+    <dependencies>
+		<dependency>
+	            <groupId>com.huaban</groupId>
+	            <artifactId>jieba-analysis</artifactId>
+	            <version>1.0.2</version>
+	     </dependency>
+	    <dependency>
+		    <groupId>com.hankcs</groupId>
+		    <artifactId>hanlp</artifactId>
+		    <version>portable-1.3.2</version>
+		</dependency>
+		
+		 <dependency>
+			  <groupId>org.apache.commons</groupId>
+			  <artifactId>commons-digester3</artifactId>
+			  <version>3.2</version>
+			  <classifier>with-deps</classifier>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-dbcp2</artifactId>
+		    <version>2.1.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-dbutils/commons-dbutils -->
+		<dependency>
+		    <groupId>commons-dbutils</groupId>
+		    <artifactId>commons-dbutils</artifactId>
+		    <version>1.6</version>
+		</dependency>
+		
+			
+		<!-- https://mvnrepository.com/artifact/org.apache.thrift/libthrift -->
+		<dependency>
+		    <groupId>org.apache.thrift</groupId>
+		    <artifactId>libthrift</artifactId>
+		    <version>0.9.0</version>
+		    <type>pom</type>
+		</dependency>
+		<dependency>
+		  <groupId>org.apache.pdfbox</groupId>
+		  <artifactId>pdfbox</artifactId>
+		  <version>2.0.5</version>
+		</dependency>
+				
+		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox-tools -->
+		<dependency>
+		    <groupId>org.apache.pdfbox</groupId>
+		    <artifactId>pdfbox-tools</artifactId>
+		    <version>2.0.5</version>
+		</dependency>
+				
+		 <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+		<dependency>
+		    <groupId>org.mongodb</groupId>
+		    <artifactId>mongo-java-driver</artifactId>
+		    <version>3.4.2</version>
+		</dependency>
+		 <dependency>
+	    <groupId>org.mongodb</groupId>
+	    <artifactId>mongodb-driver</artifactId>
+		    <version>3.4.2</version>
+		</dependency>
+		<dependency>
+		<groupId>org.mongodb</groupId>
+	    <artifactId> mongodb-driver-async</artifactId>
+		    <version>3.4.2</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.googlecode.json-simple</groupId>
+		    <artifactId>json-simple</artifactId>
+		    <version>1.1.1</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on -->
+		<dependency>
+		    <groupId>org.bouncycastle</groupId>
+		    <artifactId>bcprov-jdk15on</artifactId>
+		    <version>1.57</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>3.16</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-ooxml</artifactId>
+		    <version>3.16</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-scratchpad</artifactId>
+		    <version>3.16</version>
+		</dependency>
+	 	<!-- https://mvnrepository.com/artifact/org.clojars.sorenmacbeth/cascading-simhash -->
+		<!-- <dependency>
+		    <groupId>org.clojars.sorenmacbeth</groupId>
+		    <artifactId>cascading-simhash</artifactId>
+		    <version>1.0.1</version>
+		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/oracle/ojdbc6 -->
+	 
+	</dependencies>
+	<build>
+		<plugins>
+		  <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <compilerArguments>
+                        <extdirs>Common/src/lib</extdirs>
+                    </compilerArguments>
+                </configuration>
+            </plugin> 
+		<plugin>
+		         <artifactId>maven-assembly-plugin</artifactId>
+		         <configuration>
+		             <!--<archive>-->
+		         <!--<manifest>-->
+		             <!--<mainClass>com.allen.capturewebdata.Main</mainClass>-->
+		         <!--</manifest>-->
+		     <!--</archive>-->
+		        <descriptorRefs>
+		            <descriptorRef>jar-with-dependencies</descriptorRef>
+		        </descriptorRefs>
+		    </configuration>
+		</plugin>
+		</plugins>
+      </build>
+      
+</project>

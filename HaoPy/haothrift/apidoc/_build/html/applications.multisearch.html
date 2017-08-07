@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>applications.multsearch package &#8212; gxapplications 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="applications-multsearch-package">
+<h1>applications.multsearch package<a class="headerlink" href="#applications-multsearch-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="applications-multisearch-mainserver-module">
+<h2>applications.multisearch.MainServer module<a class="headerlink" href="#applications-multisearch-mainserver-module" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-gxthrift.applications.multisearch.MainServer"></span><dl class="class">
+<dt id="gxthrift.applications.multisearch.MainServer.Server">
+<em class="property">class </em><code class="descclassname">gxthrift.applications.multisearch.MainServer.</code><code class="descname">Server</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gxthrift/applications/multisearch/MainServer.html#Server"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gxthrift.applications.multisearch.MainServer.Server" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="applications.html#gxthrift.applications.BaseServerController.BaseServerController" title="gxthrift.applications.BaseServerController.BaseServerController"><code class="xref py py-class docutils literal"><span class="pre">gxthrift.applications.BaseServerController.BaseServerController</span></code></a></p>
+<dl class="method">
+<dt id="gxthrift.applications.multisearch.MainServer.Server.entry_word_query">
+<code class="descname">entry_word_query</code><span class="sig-paren">(</span><em>_uuid=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gxthrift/applications/multisearch/MainServer.html#Server.entry_word_query"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gxthrift.applications.multisearch.MainServer.Server.entry_word_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>命名实体词提取
+:param 文章uuid:
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gxthrift.applications.multisearch.MainServer.Server.keyword_query">
+<code class="descname">keyword_query</code><span class="sig-paren">(</span><em>_uuid=None</em>, <em>num=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gxthrift/applications/multisearch/MainServer.html#Server.keyword_query"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gxthrift.applications.multisearch.MainServer.Server.keyword_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>关键字提取
+:param 文章uuid:
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gxthrift.applications.multisearch.MainServer.Server.new_word_query">
+<code class="descname">new_word_query</code><span class="sig-paren">(</span><em>_uuid=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gxthrift/applications/multisearch/MainServer.html#Server.new_word_query"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gxthrift.applications.multisearch.MainServer.Server.new_word_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>发现新词
+:param 文章uuid:
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gxthrift.applications.multisearch.MainServer.Server.relation_query">
+<code class="descname">relation_query</code><span class="sig-paren">(</span><em>_uuid=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gxthrift/applications/multisearch/MainServer.html#Server.relation_query"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gxthrift.applications.multisearch.MainServer.Server.relation_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>关联关系查询
+:param 文章uuid:
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gxthrift.applications.multisearch.MainServer.Server.search_art_keyword">
+<code class="descname">search_art_keyword</code><span class="sig-paren">(</span><em>entry=''</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gxthrift/applications/multisearch/MainServer.html#Server.search_art_keyword"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gxthrift.applications.multisearch.MainServer.Server.search_art_keyword" title="Permalink to this definition">¶</a></dt>
+<dd><p>融合搜索
+:param entry:输入的搜索内容
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gxthrift.applications.multisearch.MainServer.Server.sim_project_query">
+<code class="descname">sim_project_query</code><span class="sig-paren">(</span><em>_uuid=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gxthrift/applications/multisearch/MainServer.html#Server.sim_project_query"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gxthrift.applications.multisearch.MainServer.Server.sim_project_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>项目实体
+:param 文章uuid:
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gxthrift.applications.multisearch.MainServer.Server.sim_unit_query">
+<code class="descname">sim_unit_query</code><span class="sig-paren">(</span><em>_uuid=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gxthrift/applications/multisearch/MainServer.html#Server.sim_unit_query"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gxthrift.applications.multisearch.MainServer.Server.sim_unit_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>机构名实体
+:param 文章uuid:
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gxthrift.applications.multisearch.MainServer.Server.sim_user_query">
+<code class="descname">sim_user_query</code><span class="sig-paren">(</span><em>_uuid=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gxthrift/applications/multisearch/MainServer.html#Server.sim_user_query"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gxthrift.applications.multisearch.MainServer.Server.sim_user_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>人名实体
+:param 文章uuid:
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="gxthrift.applications.multisearch.MainServer.Server.topic_query">
+<code class="descname">topic_query</code><span class="sig-paren">(</span><em>_uuid=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gxthrift/applications/multisearch/MainServer.html#Server.topic_query"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#gxthrift.applications.multisearch.MainServer.Server.topic_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>主题/项目分类
+:param 文章uuid:
+:return:</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-gxthrift.applications.multisearch">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-gxthrift.applications.multisearch" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">applications.multsearch package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#applications-multisearch-mainserver-module">applications.multisearch.MainServer module</a></li>
+<li><a class="reference internal" href="#module-gxthrift.applications.multisearch">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/applications.multisearch.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, hao.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/applications.multisearch.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

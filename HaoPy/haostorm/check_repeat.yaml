@@ -1,0 +1,47 @@
+name: check_repeat
+
+workers: 4
+
+topology:
+
+    - spout:
+        name: doc_phase_spout
+        module: gxstorm.check_repeat.spout.kafkaspout.doc_phase_spout
+        parallelism_hint: 1
+
+
+    - bolt:
+        name: es_search_phase2doc_bolt
+        module: gxstorm.check_repeat.bolt.esbolt.es_search_phase2doc_bolt
+        parallelism_hint: 3
+        groupings:
+             - shuffle_grouping:
+                component: doc_phase_spout
+
+    - bolt:
+        name: phase2phase_diff_bolt
+        module: gxstorm.check_repeat.bolt.phase2phase_diff_bolt
+        parallelism_hint: 3
+        groupings:
+             - shuffle_grouping:
+                component: es_search_phase2doc_bolt
+
+    - bolt:
+        name: same_phase_detail_kafka_bolt
+        module: gxstorm.check_repeat.bolt.kafkabolt.same_phase_detail_kafka_bolt
+        parallelism_hint: 1
+        groupings:
+             - shuffle_grouping:
+                component: phase2phase_diff_bolt
+
+    - bolt:
+        name: same_phase_detail_hbase_bolt
+        module: gxstorm.check_repeat.bolt.hbasebolt.same_phase_detail_hbase_bolt
+        parallelism_hint: 1
+        groupings:
+             - shuffle_grouping:
+                component: phase2phase_diff_bolt
+
+
+
+

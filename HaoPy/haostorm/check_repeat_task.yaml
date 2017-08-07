@@ -1,0 +1,38 @@
+name: check_repeat_task
+
+workers: 2
+
+topology:
+
+    - spout:
+        name: doc_phase_task_spout
+        module: haostorm.check_repeat.spout.kafkaspout.doc_phase_task_spout
+        parallelism_hint: 1
+
+    - bolt:
+        name: es_search_phase2doc_bolt
+        module: haostorm.check_repeat.bolt.esbolt.es_search_phase2doc_bolt
+        parallelism_hint: 1
+        groupings:
+             - shuffle_grouping:
+                component: doc_phase_task_spout
+
+    - bolt:
+        name: phase2phase_diff_bolt
+        module: haostorm.check_repeat.bolt.phase2phase_diff_bolt
+        parallelism_hint: 1
+        groupings:
+             - shuffle_grouping:
+                component: es_search_phase2doc_bolt
+
+    - bolt:
+        name: same_phase_detail_hbase_bolt
+        module: haostorm.check_repeat.bolt.hbasebolt.same_phase_detail_hbase_bolt
+        parallelism_hint: 1
+        groupings:
+             - shuffle_grouping:
+                component: phase2phase_diff_bolt
+
+
+
+

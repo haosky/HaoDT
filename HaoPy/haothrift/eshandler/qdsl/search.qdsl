@@ -1,0 +1,18 @@
+[datacenter]
+query_table_data__v1={"query":{"match":{"keyword_str":%s}}}
+
+[gdfinanical]
+alldata__v1={"query" : {"bool":{"should":[%s]}}}
+
+[guangdongfinanical]
+Pdfs__v1={"query":{"query_string":{"default_field":"content","query" :"%s"}}}
+
+[caizheng]
+MoNi__v1={"from" : 0, "size" : 1,"query":{"query_string":{"default_field":"project","query" :"%s"}}}
+MoNi__v2={"size" : 30,"query":{"query_string":{"fields":["project"],"query" :"%s"}}}
+MoNi__v1_row={"from" : 0, "size" : %s, "query": {"query_string":{"fields":["project"],"query" :"%s"}}}
+MoNi__v2_row={"from" : 0, "size" : %s, "query": {"match_phrase": { "content": "%s" }}}
+
+[index_type]
+CZ_INDEX_DATA_CENTER=monidatas
+CZ_DOC_TYPE_TABLE=mraw

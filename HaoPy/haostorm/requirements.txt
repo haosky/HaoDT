@@ -1,0 +1,9 @@
+lxml
+selenium
+thrift
+jieba
+elasticsearch
+simhash
+pykafka
+pyleus
+requests
