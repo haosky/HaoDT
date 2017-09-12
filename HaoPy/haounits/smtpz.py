@@ -7,9 +7,9 @@ import time
 __author__ = 'hao'
 smtpserver = 'smtp.zoho.com.cn'
 pop3server = 'pop.zoho.com.cn'
-username ='ahoaho@zoho.com.cn'
+username ='aho@zoho.com.cn'
 #: smtp.zoho.com.cn, 端口: 465, SSL
-password = 'hao123abc'
+password = '*********'
 
 # 开始接收邮件
 
